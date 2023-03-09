@@ -26,4 +26,7 @@ public interface LockRepository extends JpaRepository<Lock, Long> {
 
     @Transactional
     long deleteByLockNameAndLockOwner(String lockName, String lockOwner);
+
+    @Transactional
+    int deleteByLastModifiedTimeBefore(Timestamp boundary);
 }
